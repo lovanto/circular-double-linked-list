@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1582306294 source:d:\cpp\tp5\cdll.cpp
+	<iostream>
+	"cdll.h"
+
+1582306357 d:\cpp\tp5\cdll.h
+
+1582305984 source:d:\cpp\tp5\main.cpp
+	"cdll.cpp"
+
+1582306130 d:\cpp\tp5\cdll.cpp
+

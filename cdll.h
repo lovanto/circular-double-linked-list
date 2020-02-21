@@ -1,12 +1,12 @@
 #ifndef CDLL_H_INCLUDED
 #define CDLL_H_INCLUDED
-
 #define first(L) L.first
 #define last(L) L.last
 #define next(P) P->next
 #define info(P) P->info
 #define prev(P) P->prev
 
+using namespace std;
 typedef char infotype;
 typedef struct elmList *address;
 

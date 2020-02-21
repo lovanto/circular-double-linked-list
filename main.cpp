@@ -2,6 +2,11 @@
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    List L;
+
+    createList(L);
+    createNewElmt('a', P);
+    insertFirst(L, P);
+    printInfo(L);
     return 0;
 }
