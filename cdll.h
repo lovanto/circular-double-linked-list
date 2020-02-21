@@ -27,11 +27,12 @@ bool isEmpty(List L);
 void createList(List &L);
 void createNewElmt(infotype x, address &P);
 void insertFirst(List &L, address &P);
-void insertAfter(address prec, address P);
+void insertAfter(List &L, address prec, address P);
+void insertLast(List &L, address &P);
 void deleteFirst(List &L, address &P);
 void deleteAfter(address prec, address &P);
-int countWord(char[], List L);
+int countWord(infotype data[], List L);
 void printInfo(List L);
-address findPrec(List L, address P);
+address findPrec(List L, char x);
 
 #endif // CDL_H_INCLUDED

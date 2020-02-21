@@ -36,8 +36,20 @@ void insertFirst(List &L, address &P){
     }
 }
 
-void insertAfter(address prec, address P){
+void insertAfter(List &L, address prec, address P){
+    next(P) = next(prec);
+    prev(P) = prec;
+    prev(next(prec)) = P;
+    next(prec) = P;
+    if(next(P) == first(L)){
+        last(L) = P;
+    }
+}
 
+void insertLast(List &L, address &P){
+    next(last(L)) = P;
+    prev(first(L)) = P;
+    last(L) = P;
 }
 
 void deleteFirst(List &L, address &P){
@@ -54,14 +66,22 @@ int countWord(char[], List L){
 
 void printInfo(List L){
     address P = first(L);
-    while (P != NULL)
+    //while (P != last(L))
+    for(int i=0; i<8; i++)
     {
-        cout << info(P);
+        cout << info(P) << "  ";
         P = next(P);
     }
     cout << endl;
 }
 
-address findPrec(List L, address P){
-
+address findPrec(List L, char x){
+    address P = first(L);
+    while (P != last(L) && P != last(L))
+    {
+        if(info(P) == x){
+            return P;
+        }
+        P = next(P);
+    }
 }

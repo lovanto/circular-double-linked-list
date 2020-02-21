@@ -3,10 +3,12 @@
 	<iostream>
 	"cdll.h"
 
-1582306357 d:\cpp\tp5\cdll.h
+1582309917 d:\cpp\tp5\cdll.h
 
-1582305984 source:d:\cpp\tp5\main.cpp
+1582309739 source:d:\cpp\tp5\main.cpp
 	"cdll.cpp"
 
-1582306130 d:\cpp\tp5\cdll.cpp
+1582309935 d:\cpp\tp5\cdll.cpp
+	<iostream>
+	"cdll.h"
 
