@@ -31,8 +31,10 @@ void insertAfter(List &L, address prec, address P);
 void insertLast(List &L, address &P);
 void deleteFirst(List &L, address &P);
 void deleteAfter(address prec, address &P);
+void deleteLast(List &L, address &P);
 int countWord(infotype data[], List L);
-void printInfo(List L);
+void printInfo(List L, int countData);
 address findPrec(List L, char x);
+int findWord(infotype data[], int countData);
 
 #endif // CDL_H_INCLUDED

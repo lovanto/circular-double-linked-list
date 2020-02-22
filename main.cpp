@@ -4,6 +4,8 @@ int main()
 {
     List L;
     address P, prec;
+    int countData, countWordCAT;
+    char data[10];
 
     createList(L);
     createNewElmt('a', P);
@@ -31,6 +33,30 @@ int main()
 
     createNewElmt('a', P);
     insertLast(L, P);
-    printInfo(L);
+
+    countData = countWord(data, L);
+    cout << "Jumlah kata: " << countData << endl;
+    cout << "Dengan isi: ";
+    printInfo(L, countData);
+    countWordCAT = findWord(data, countData);
+    cout << "Jumlah kata cat: " << countWordCAT << endl;
+    cout << endl;
+
+    cout << "DELETE FIRST" << endl;
+    deleteFirst(L, P);
+    countData = countWord(data, L);
+    printInfo(L, countData);
+
+    cout << "DELETE LAST" << endl;
+    deleteLast(L, P);
+    countData = countWord(data, L);
+    printInfo(L, countData);
+
+    cout << "DELETE AFTER" << endl;
+    prec = findPrec(L, 't');
+    deleteAfter(prec, P);
+    countData = countWord(data, L);
+    printInfo(L, countData);
+
     return 0;
 }

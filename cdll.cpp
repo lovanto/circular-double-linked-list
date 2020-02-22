@@ -48,26 +48,52 @@ void insertAfter(List &L, address prec, address P){
 
 void insertLast(List &L, address &P){
     next(last(L)) = P;
+    prev(P) = last(L);
     prev(first(L)) = P;
     last(L) = P;
 }
 
 void deleteFirst(List &L, address &P){
-
+    P = first(L);
+    first(L) = next(P);
+    prev(first(L)) = last(L);
+    next(last(L)) = first(L);
+    next(P) = NULL;
+    prev(P) = NULL;
 }
 
 void deleteAfter(address prec, address &P){
-
+    P = next(prec);
+    next(prec) = next(P);
+    prev(next(P)) = prec;
+    next(P) = NULL;
+    prev(P) = NULL;
 }
 
-int countWord(char[], List L){
-
+void deleteLast(List &L, address &P){
+    P = last(L);
+    last(L) = prev(last(L));
+    next(last(L)) = first(L);
+    prev(first(L)) = last(L);
+    next(P) = NULL;
+    prev(P) = NULL;
 }
 
-void printInfo(List L){
+int countWord(infotype data[], List L){
     address P = first(L);
-    //while (P != last(L))
-    for(int i=0; i<8; i++)
+    int i = 0;
+    while(P != last(L)){
+        data[i] = info(P);
+        P = next(P);
+        i++;
+    }
+    data[i]=info(last(L));
+    return i + 1;
+}
+
+void printInfo(List L, int countData){
+    address P = first(L);
+    for(int i=0; i<countData; i++)
     {
         cout << info(P) << "  ";
         P = next(P);
@@ -84,4 +110,27 @@ address findPrec(List L, char x){
         }
         P = next(P);
     }
+    return P;
+}
+
+int findWord(infotype data[], int countData){
+    int countWord = 0;
+    int i, j, k;
+    for(i=0; i<countData; i++)
+    {
+        j = i+1;
+        k = i+2;
+
+        if (j>=countData){
+            j = j-countData;
+        }
+        if (k>=countData){
+            k = k-countData;
+        }
+
+        if (data[i]=='c' && data[j]=='a' && data[k]=='t'){
+            countWord++;
+        }
+    }
+    return countWord;
 }
